@@ -13,6 +13,20 @@
 </head>
 <body>
 	
+	<!-- breadcrumb -->
+	<nav aria-label="breadcrumb">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item active" aria-current="page">Home</li>
+		</ol>
+	</nav>
+
+	<!-- jumbotron -->
+	<div class="jumbotron">
+		<h1 class="display-4">Doggo Image Gallery</h1>
+		<p class="lead">This is one of the components that needs to be customized</p>
+
+	</div>
+		
 	<!-- carousel setup -->
 	<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 		<div class="carousel-inner">
@@ -166,6 +180,7 @@
 
 			var link = document.createElement("a");
 			var icon = document.createElement("i");
+			var span = document.createElement("span");
 			icon.setAttribute("class", "fa fa-heart");
 
 			link.setAttribute("href", urlOfDetailPage); 
@@ -173,8 +188,12 @@
 			imgDiv.appendChild(link); 
 			imgDiv.appendChild(titleInDiv);
 
+			span.setAttribute("class", "badge badge-success");
+			span.innerText = "New Favorite!";
+
 			if (getCookie(i) != "")
 			{
+				imgDiv.appendChild(span);
 				imgDiv.appendChild(icon);
 				imgDiv.style.background = "red";
 			}
